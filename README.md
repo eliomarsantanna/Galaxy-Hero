@@ -1,2 +1,0 @@
-# Radius-Raid
-"Treinamento imersivo"
