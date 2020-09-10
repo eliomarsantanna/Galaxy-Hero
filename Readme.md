@@ -1,2 +1,2 @@
 # Radius-Raid
-"Game/Treinamento imersivo"
+"Treinamento imersivo"
