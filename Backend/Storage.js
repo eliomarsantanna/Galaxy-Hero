@@ -13,7 +13,7 @@ Storage.prototype.removeObject = function( key ) {
 }
 
 $.setupStorage = function() {
-	$.storage = localStorage.getObject( 'radiusraid' ) || {
+	$.storage = localStorage.getObject( 'nuclearpower' ) || {
 		'mute': 0,
 		'autofire': 0,
 		'score': 0,
@@ -27,10 +27,10 @@ $.setupStorage = function() {
 };
 
 $.updateStorage = function() {
-	localStorage.setObject( 'radiusraid', $.storage );
+	localStorage.setObject( 'nuclearpower', $.storage );
 };
 
 $.clearStorage = function() {
-	localStorage.removeObject( 'radiusraid' );
+	localStorage.removeObject( 'nuclearpower' );
 	$.setupStorage();
 };
