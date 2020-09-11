@@ -7,10 +7,10 @@ $.ParticleEmitter = function( opt ) {
 	}
 	this.particles = [];
 	for( var i = 0; i < this.count; i++ ) {
-		var radius = Math.sqrt( Math.random() ) * this.spawnRange,
+		var nuclear = Math.sqrt( Math.random() ) * this.spawnRange,
             angle = Math.random() * $.twopi,
-            x = this.x + Math.cos( angle ) * radius,
-            y = this.y + Math.sin( angle ) * radius;
+            x = this.x + Math.cos( angle ) * nuclear,
+            y = this.y + Math.sin( angle ) * nuclear;
 		this.particles.push( new $.Particle( {
 			parent: this.particles,
 			x: x,
