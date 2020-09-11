@@ -88,7 +88,7 @@ $.definitions.enemies = [
 		value: 5,
 		speed: 1.5,
 		life: 1,
-		radius: 15,
+		nuclear: 15,
 		hue: 180,
 		lockBounds: 1,
 		setup: function() {
@@ -116,7 +116,7 @@ $.definitions.enemies = [
 		value: 10,
 		speed: 1.5,
 		life: 2,
-		radius: 15,
+		nuclear: 15,
 		hue: 120,
 		lockBounds: 1,
 		setup: function() {
@@ -145,7 +145,7 @@ $.definitions.enemies = [
 		value: 15,
 		speed: 1.5,
 		life: 2,
-		radius: 20,
+		nuclear: 20,
 		hue: 330,
 		behavior: function() {
 			var speed = this.speed;
@@ -164,7 +164,7 @@ $.definitions.enemies = [
 		value: 20,
 		speed: 0.5,
 		life: 3,
-		radius: 50,
+		nuclear: 50,
 		hue: 210,
 		canSpawn: 1,
 		behavior: function() {
@@ -208,7 +208,7 @@ $.definitions.enemies = [
 		value: 25,
 		speed: 2,
 		life: 4,
-		radius: 20,
+		nuclear: 20,
 		hue: 30,
 		lockBounds: 1,
 		setup: function() {
@@ -237,7 +237,7 @@ $.definitions.enemies = [
 		value: 30,
 		speed: 1,
 		life: 3,
-		radius: 20,
+		nuclear: 20,
 		hue: 0,
 		saturation: 0,
 		lightness: 30,
@@ -258,7 +258,7 @@ $.definitions.enemies = [
 		value: 35,
 		speed: 0.25,
 		life: 8,
-		radius: 80,
+		nuclear: 80,
 		hue: 150,
 		behavior: function() {
 			var speed = this.speed;
@@ -277,7 +277,7 @@ $.definitions.enemies = [
 		value: 40,
 		speed: 2.5,
 		life: 1,
-		radius: 15,
+		nuclear: 15,
 		hue: 300,
 		behavior: function() {
 			var speed = this.speed;
@@ -298,7 +298,7 @@ $.definitions.enemies = [
 		speed: 1.5,
 		growth: 0.1,
 		life: 6,
-		radius: 20,
+		nuclear: 20,
 		hue: 0,
 		saturation: 0,
 		lightness: 100,
@@ -335,7 +335,7 @@ $.definitions.enemies = [
 		speed: 0.5,
 		angleSpeed: 0.015,
 		life: 2,
-		radius: 20,
+		nuclear: 20,
 		hue: 60,
 		setup: function() {
 			var dx = this.x - $.hero.x,
@@ -365,7 +365,7 @@ $.definitions.enemies = [
 		value: 55,
 		speed: 1,
 		life: 3,
-		radius: 45,
+		nuclear: 45,
 		hue: 0,
 		canSpawn: 1,
 		spawnTick: 0,
@@ -389,7 +389,7 @@ $.definitions.enemies = [
 				} else {
 					this.spawnTick = 0;
 					var enemy = $.spawnEnemy( this.type );
-					enemy.radius = 20;
+					enemy.nuclear = 20;
 					enemy.canSpawn = 0;
 					enemy.speed = 3;
 					enemy.life = 1;
@@ -405,7 +405,7 @@ $.definitions.enemies = [
 		value: 60,
 		speed: 1.5,
 		life: 10,
-		radius: 30,
+		nuclear: 30,
 		hue: 90,		
 		setup: function(){
 			this.xTarget = $.util.rand( 50, $.ww - 50 );
@@ -432,11 +432,11 @@ $.definitions.enemies = [
 		value: 65,
 		speed: 6,
 		life: 1,
-		radius: 5,
+		nuclear: 5,
 		hue: 0,
 		lockBounds: 1,
 		setup: function() {
-			this.radius = $.util.rand( 15, 35 );
+			this.nuclear = $.util.rand( 15, 35 );
 			this.speed = $.util.rand( 3, 8 );
 			if( Math.random() > 0.5 ){
 				if( this.start == 'top' ){
