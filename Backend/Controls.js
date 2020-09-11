@@ -1,5 +1,5 @@
 	<head>
-		<title>Radius Raid</title>
+		<title>Nuclear Power</title>
 		<link rel="shortcut icon" id="favicon" />
 
 		<style>
