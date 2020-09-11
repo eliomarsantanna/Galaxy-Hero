@@ -45,20 +45,20 @@ $.util.pointInRect = function( px, py, rx, ry, rw, rh ) {
 /*==============================================================================
 Shapes
 ==============================================================================*/
-$.util.circle = function( ctx, x, y, radius ) {
-	var radius = radius <= 0 ? 1 : radius;
+$.util.circle = function( ctx, x, y, nuclear ) {
+	var nuclear = nuclear <= 0 ? 1 : nuclear;
 	ctx.beginPath();
-	ctx.arc( x, y, radius, 0, $.twopi, false );
+	ctx.arc( x, y, nuclear, 0, $.twopi, false );
 };
 
-$.util.fillCircle = function( ctx, x, y, radius, fillStyle ) {  
-	$.util.circle( ctx, x, y, radius );
+$.util.fillCircle = function( ctx, x, y, nuclear, fillStyle ) {  
+	$.util.circle( ctx, x, y, nuclear );
 	ctx.fillStyle = fillStyle;
 	ctx.fill();
 };
 
-$.util.strokeCircle = function( ctx, x, y, radius, strokeStyle, lineWidth ) {
-	$.util.circle( ctx, x, y, radius );
+$.util.strokeCircle = function( ctx, x, y, nuclear, strokeStyle, lineWidth ) {
+	$.util.circle( ctx, x, y, nuclear );
 	ctx.lineWidth = lineWidth;
 	ctx.strokeStyle = strokeStyle;
 	ctx.stroke();
