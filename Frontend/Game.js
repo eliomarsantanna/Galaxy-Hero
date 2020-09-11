@@ -630,7 +630,7 @@ $.renderMinimap = function() {
 /*==============================================================================
 Enemy Spawning
 ==============================================================================*/
-$.getSpawnCoordinates = function( radius ) {
+$.getSpawnCoordinates = function( nuclear ) {
 	var quadrant = Math.floor( $.util.rand( 0, 4 ) ),
 		x,
 		y,
@@ -638,18 +638,18 @@ $.getSpawnCoordinates = function( radius ) {
 
 	if( quadrant === 0){
 		x = $.util.rand( 0, $.ww );
-		y = -radius;
+		y = -nuclear;
 		start = 'top';
 	} else if( quadrant === 1 ){
-		x = $.ww + radius;
+		x = $.ww + nuclear;
 		y = $.util.rand( 0, $.wh );
 		start = 'right';
 	} else if( quadrant === 2 ) {
 		x = $.util.rand( 0, $.ww );
-		y = $.wh + radius;
+		y = $.wh + nuclear;
 		start = 'bottom';
 	} else {
-		x = -radius;
+		x = -nuclear;
 		y = $.util.rand( 0, $.wh );
 		start = 'left';
 	}
@@ -659,7 +659,7 @@ $.getSpawnCoordinates = function( radius ) {
 
 $.spawnEnemy = function( type ) {
 	var params = $.definitions.enemies[ type ],
-		coordinates = $.getSpawnCoordinates( params.radius );
+		coordinates = $.getSpawnCoordinates( params.nuclear );
 	params.x = coordinates.x;
 	params.y = coordinates.y;
 	params.start = coordinates.start;
@@ -777,14 +777,14 @@ $.bindEvents = function() {
     position: { top: '50%', left: '50%' },
     mode: 'static'
   }).on('move', function (e, data) {
-    var radius = 300;
+    var nuclear = 300;
     var center = {
         x: $.cOffset.left + $.cOffset.width/2,
         y: $.cOffset.top + $.cOffset.height/2
     };
     var angle = data.angle.radian;
-    $.mouse.ax = center.x + radius * Math.cos(angle);
-    $.mouse.ay = center.y - radius * Math.sin(angle);
+    $.mouse.ax = center.x + nuclear * Math.cos(angle);
+    $.mouse.ay = center.y - nuclear * Math.sin(angle);
     $.mousescreen();
     $.mouse.down = 1;
   }).on('start', function () {
