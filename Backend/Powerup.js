@@ -48,7 +48,7 @@ $.Powerup.prototype.update = function( i ) {
 	/*==============================================================================
 	Check Collection Collision
 	==============================================================================*/
-	if( $.hero.life > 0 && $.util.arcIntersectingRect( $.hero.x, $.hero.y, $.hero.radius + 2, this.x, this.y, this.width, this.height ) ){
+	if( $.hero.life > 0 && $.util.arcIntersectingRect( $.hero.x, $.hero.y, $.hero.nuclear + 2, this.x, this.y, this.width, this.height ) ){
 		$.audio.play( 'powerup' );
 		$.powerupTimers[ this.type ] = 300;
 		$.particleEmitters.push( new $.ParticleEmitter( {
