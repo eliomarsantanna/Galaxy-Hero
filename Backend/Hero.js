@@ -10,7 +10,7 @@ $.Hero = function() {
 	this.vmax = 6;
 	this.direction = 0;
 	this.accel = 0.5;
-	this.radius = 10;
+	this.nuclear = 10;
 	this.life = 1;
 	this.takingDamage = 0;
 	this.fillStyle = '#fff';
@@ -71,17 +71,17 @@ $.Hero.prototype.update = function() {
 		/*==============================================================================
 		Lock Bounds
 		==============================================================================*/
-		if( this.x >= $.ww - this.radius ) {
-			this.x = $.ww - this.radius;
+		if( this.x >= $.ww - this.nuclear ) {
+			this.x = $.ww - this.nuclear;
 		}
-		if( this.x <= this.radius ) {
-			this.x = this.radius;
+		if( this.x <= this.nuclear ) {
+			this.x = this.nuclear;
 		}
-		if( this.y >= $.wh - this.radius ) {
-			this.y = $.wh - this.radius;
+		if( this.y >= $.wh - this.nuclear ) {
+			this.y = $.wh - this.nuclear;
 		}
-		if( this.y <= this.radius ) {
-			this.y = this.radius;
+		if( this.y <= this.nuclear ) {
+			this.y = this.nuclear;
 		}
 
 		/*==============================================================================
@@ -114,8 +114,8 @@ $.Hero.prototype.update = function() {
 					var spreadStep = 0;
 				}
 
-				var gunX = this.x + Math.cos( this.direction ) * ( this.radius + this.weapon.bullet.size );
-				var gunY = this.y + Math.sin( this.direction ) * ( this.radius + this.weapon.bullet.size );
+				var gunX = this.x + Math.cos( this.direction ) * ( this.nuclear + this.weapon.bullet.size );
+				var gunY = this.y + Math.sin( this.direction ) * ( this.nuclear + this.weapon.bullet.size );
 
 				for( var i = 0; i < this.weapon.count; i++ ) {
 					$.bulletsFired++;
@@ -149,7 +149,7 @@ $.Hero.prototype.update = function() {
 		var ei = $.enemies.length;
 		while( ei-- ) {
 			var enemy = $.enemies[ ei ];
-			if( enemy.inView && $.util.distance( this.x, this.y, enemy.x, enemy.y ) <= this.radius + enemy.radius ) {
+			if( enemy.inView && $.util.distance( this.x, this.y, enemy.x, enemy.y ) <= this.nuclear + enemy.nuclear ) {
 				$.particleEmitters.push( new $.ParticleEmitter( {
 					x: this.x,
 					y: this.y,
@@ -194,23 +194,23 @@ $.Hero.prototype.render = function() {
 		$.ctxmg.translate( this.x, this.y );
 		$.ctxmg.rotate( this.direction - $.pi / 4 );
 		$.ctxmg.fillStyle = fillStyle;
-		$.ctxmg.fillRect( 0, 0, this.radius, this.radius );
+		$.ctxmg.fillRect( 0, 0, this.nuclear, this.nuclear );
 		$.ctxmg.restore();
 
 		$.ctxmg.save();
 		$.ctxmg.translate( this.x, this.y );	
 		$.ctxmg.rotate( this.direction - $.pi / 4 + $.twopi / 3 );
 		$.ctxmg.fillStyle = fillStyle;
-		$.ctxmg.fillRect( 0, 0, this.radius, this.radius );
+		$.ctxmg.fillRect( 0, 0, this.nuclear, this.nuclear );
 		$.ctxmg.restore();
 
 		$.ctxmg.save();
 		$.ctxmg.translate( this.x, this.y );	
 		$.ctxmg.rotate( this.direction - $.pi / 4 - $.twopi / 3 );
 		$.ctxmg.fillStyle = fillStyle;
-		$.ctxmg.fillRect( 0, 0, this.radius, this.radius );
+		$.ctxmg.fillRect( 0, 0, this.nuclear, this.nuclear );
 		$.ctxmg.restore();
 
-		$.util.fillCircle( $.ctxmg, this.x, this.y, this.radius - 3, fillStyle );
+		$.util.fillCircle( $.ctxmg, this.x, this.y, this.nuclear - 3, fillStyle );
 	}	
 };
