@@ -1,7 +1,8 @@
 # Galaxy Hero
-Galaxy Hero, é um game remoto desenvolvido pelo Full Stack Eliomar Sant'Anna
-Ação 
+▪Galaxy Hero, é um game remoto desenvolvido pelo Full Stack Eliomar Sant'Anna
+# Categoria 
+▪Ação 
 # Tecnologia 
-JavaScript 
+▪JavaScript 
 # Autoria 
-Desenvolvido por Eliomar Sant'Anna 
+▪Desenvolvido por Eliomar Sant'Anna 
