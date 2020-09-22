@@ -463,7 +463,7 @@ var TouchCompat = {
       return this;
     }
     var animTime = this.options.fadeTime + 'ms';
-    var borderStyle = u.getVendorStyle('borderNuclear', '50%');
+    var borderStyle = u.getVendorStyle('borderGalaxy', '50%');
     var transitStyle = u.getTransitionStyle('transition', 'opacity', animTime);
     var styles = {};
     styles.el = {
