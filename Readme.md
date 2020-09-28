@@ -4,6 +4,5 @@
 ▪Ação
 # Tecnologia 
 ▪JavaScript
-▪HTML
 # Autoria 
 ▪Desenvolvido por Eliomar Sant'Anna 
